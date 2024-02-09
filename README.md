@@ -1,8 +1,10 @@
 # UIAutomation
 Task 1: API Automation
+
 I have taken breed list from CSV file, and change all breed names to lowercase and remove all its duplicates.
 
 Task 2: API Automation
+
 1.I get individual breed list of all dogs by eliminating array of breed from responsebody
 2.I also print total number of breeds in response and individual breed ist in response
 
