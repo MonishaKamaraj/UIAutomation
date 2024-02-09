@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="4" passed="4" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2024-02-09T10:01:28 IST" name="Default suite" finished-at="2024-02-09T10:01:33 IST" duration-ms="5315">
+    <groups>
+    </groups>
+    <test started-at="2024-02-09T10:01:28 IST" name="Default test" finished-at="2024-02-09T10:01:33 IST" duration-ms="5315">
+      <class name="SeleniumProject.SeleniumProject.SweetShop">
+        <test-method is-config="true" signature="setup()[pri:0, instance:SeleniumProject.SeleniumProject.SweetShop@72cde7cc]" started-at="2024-02-09T10:01:28 IST" name="setup" finished-at="2024-02-09T10:01:29 IST" duration-ms="1330" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:SeleniumProject.SeleniumProject.SweetShop@72cde7cc]" started-at="2024-02-09T10:01:29 IST" name="launchBrowser" finished-at="2024-02-09T10:01:29 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchBrowser -->
+        <test-method signature="sweetPurchase()[pri:0, instance:SeleniumProject.SeleniumProject.SweetShop@72cde7cc]" started-at="2024-02-09T10:01:29 IST" name="sweetPurchase" finished-at="2024-02-09T10:01:32 IST" duration-ms="2519" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- sweetPurchase -->
+        <test-method signature="ValidateSweetPrice()[pri:1, instance:SeleniumProject.SeleniumProject.SweetShop@72cde7cc]" started-at="2024-02-09T10:01:32 IST" name="ValidateSweetPrice" finished-at="2024-02-09T10:01:32 IST" depends-on-methods="SeleniumProject.SeleniumProject.SweetShop.sweetPurchase" duration-ms="222" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ValidateSweetPrice -->
+        <test-method signature="EnterDetails()[pri:2, instance:SeleniumProject.SeleniumProject.SweetShop@72cde7cc]" started-at="2024-02-09T10:01:32 IST" name="EnterDetails" finished-at="2024-02-09T10:01:33 IST" depends-on-methods="SeleniumProject.SeleniumProject.SweetShop.sweetPurchase" duration-ms="730" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- EnterDetails -->
+        <test-method signature="standardShipping()[pri:3, instance:SeleniumProject.SeleniumProject.SweetShop@72cde7cc]" started-at="2024-02-09T10:01:33 IST" name="standardShipping" finished-at="2024-02-09T10:01:33 IST" depends-on-methods="SeleniumProject.SeleniumProject.SweetShop.sweetPurchase" duration-ms="275" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- standardShipping -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:SeleniumProject.SeleniumProject.SweetShop@72cde7cc]" started-at="2024-02-09T10:01:33 IST" name="teardown" finished-at="2024-02-09T10:01:33 IST" duration-ms="194" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+      </class> <!-- SeleniumProject.SeleniumProject.SweetShop -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
