@@ -1,0 +1,126 @@
+{
+	"info": {
+		"_postman_id": "b55f6dfc-4c4c-4026-ac74-a7fa9d044364",
+		"name": "Dog_Breed_Fetch_CSV",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27742144"
+	},
+	"item": [
+		{
+			"name": "CSVFolder",
+			"item": [
+				{
+					"name": "Post_Call_for_Reading_CSV",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData=pm.response.json();\r",
+									"console.log(pm.response.json());\r",
+									"//console.log(`Number of keys: ${_.size(jsonData)}`);\r",
+									"console.log(pm.response.json()[\"Breed\"].toLowerCase());\r",
+									"function checkIfArrayIsUnique(array) {\r",
+									"return array.length === new Set(array).size;\r",
+									"}\r",
+									" \r",
+									"pm.test(\"Check is Breeds are unique\", () => {\r",
+									"let Breeds =\r",
+									"_.each(pm.response.json().Breed, (item) => {\r",
+									"Breeds.push(item.Breeds)\r",
+									"})\r",
+									" \r",
+									"pm.expect(checkIfArrayIsUnique(Breeds), Breeds).to.be.true\r",
+									"})"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    //\"LicenseType\":\"{{LicenseType}}\",\r\n   \"Breed\":\"{{Breed}}\"\r\n   //\"Color\":\"{{Color}}\",\r\n    //\"DogName\":\"{{DogName}}\",\r\n   //\"OwnerZip\":\"{{OwnerZip}}\",\r\n   //\"ExpYear\":\"{{ExpYear}}\",\r\n   //\"ValidDate\":\"{{ValidDate}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://jsonplaceholder.typicode.com/posts",
+							"protocol": "https",
+							"host": [
+								"jsonplaceholder",
+								"typicode",
+								"com"
+							],
+							"path": [
+								"posts"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "IndividualBreedList",
+			"item": [
+				{
+					"name": "Breed_List",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData=pm.response.json();\r",
+									"console.log(`Number of keys: ${_.size(jsonData)}`);\r",
+									"count=Object.keys( jsonData.message ).length;\r",
+									"console.log(\"message size: \"+count);\r",
+									"var countbreed=0;\r",
+									" for (var key in jsonData.message) {\r",
+									"     //console.log(key);\r",
+									"     //console.log(jsonData.message[key].length);\r",
+									"     \r",
+									"    if(jsonData.message[key].length>0){\r",
+									"        continue;\r",
+									"    }\r",
+									"    else{\r",
+									"        countbreed++;\r",
+									"        console.log(\"List with individual breed names: \" + key);\r",
+									"        \r",
+									"    }\r",
+									"    }\r",
+									"    console.log(countbreed);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://dog.ceo/api/breeds/list/all",
+							"protocol": "https",
+							"host": [
+								"dog",
+								"ceo"
+							],
+							"path": [
+								"api",
+								"breeds",
+								"list",
+								"all"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
